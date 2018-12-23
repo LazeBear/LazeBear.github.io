@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "neuropol";
+  src: url("fonts/neuropol.woff") format("woff"), url("fonts/neuropol.ttf") format("truetype");
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "neuropol", sans-serif;
+  font-size: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(#eaf9f8, #8cdcda);
+  color: #4d4d4d;
+}
+
+.game-title {
+  margin: 20px;
+}
+
+.game-stats {
+  width: 500px;
+  display: flex;
+}
+.game-stats__level, .game-stats__score {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+}
+.game-stats__button {
+  font-family: inherit;
+  background-color: #8cdcda;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1rem;
+  cursor: pointer;
+  width: 100px;
+}
+
+.game-timer {
+  margin-top: 10px;
+  width: 550px;
+  background-color: #51cac7;
+  border-radius: 5px;
+}
+.game-timer__bar {
+  width: 100%;
+  height: 20px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 20px;
+  background-color: #8cdcda;
+  box-shadow: #8cdcda 0px 0 10px;
+}
+
+.game-instruction__header {
+  text-align: center;
+  margin: 10px;
+}
+
+.game-board {
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+  perspective: 600px;
+  width: 600px;
+  height: 600px;
+}
+
+.card {
+  position: relative;
+  transition: transform 0.5s;
+  box-shadow: #f16a71dd 0px 0 10px;
+  border-radius: 5px;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.card--flipped {
+  transform: rotateY(180deg);
+}
+.card__face {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  position: absolute;
+  backface-visibility: hidden;
+}
+.card__face--front {
+  background: #f16a70;
+  background-image: url("./icons/m.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.card__face--back {
+  transform: rotateY(180deg);
+}
+.card.html5 .card__face--back {
+  background-image: url("./icons/html5.svg");
+}
+.card.css3 .card__face--back {
+  background-image: url("./icons/css3.svg");
+}
+.card.js .card__face--back {
+  background-image: url("./icons/js.svg");
+}
+.card.react .card__face--back {
+  background-image: url("./icons/react.svg");
+}
+.card.nodejs .card__face--back {
+  background-image: url("./icons/nodejs.svg");
+}
+.card.sass .card__face--back {
+  background-image: url("./icons/sass.svg");
+}
+.card.linkedin .card__face--back {
+  background-image: url("./icons/linkedin.svg");
+}
+.card.heroku .card__face--back {
+  background-image: url("./icons/heroku.svg");
+}
+.card.github .card__face--back {
+  background-image: url("./icons/github.svg");
+}
+.card.aws .card__face--back {
+  background-image: url("./icons/aws.svg");
+}
+
+/*# sourceMappingURL=style.css.map */
